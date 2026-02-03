@@ -26,15 +26,19 @@
       height: 200px;
       border: none;
       border-radius: 12px;
+      margin-bottom: 12px;
     }
     button {
       font-size: 18px;
-      padding: 12px 24px;
-      margin-top: 16px;
+      padding: 10px 20px;
+      margin: 6px;
       background: #0099ff;
       color: white;
       border: none;
       border-radius: 8px;
+    }
+    button:active {
+      opacity: 0.8;
     }
   </style>
 
@@ -44,29 +48,27 @@
   <header>高知の紹介</header>
 
   <div class="content">
-    <p>高知県の自然や文化を動画で紹介 🎥</p>
+    <p>高知の魅力を動画でチェック 🎥</p>
 
-    <!-- YouTube埋め込み -->
-    <div id="videoContainer">
-      <iframe 
-        id="ytVideo" 
-        src="https://www.youtube.com/embed/QSDclh3LRUw" 
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
+    <!-- YouTube 動画埋め込み -->
+    <iframe 
+      id="ytVideo" 
+      src="https://www.youtube.com/embed/QSDclh3LRUw" 
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
 
-    <button onclick="changeVideo()">別の動画を見る</button>
+    <br>
+
+    <button onclick="showVideo('QSDclh3LRUw')">動画①を見る</button>
+    <button onclick="showVideo('HqmUztC0u7M')">動画②を見る</button>
   </div>
 
   <script>
-    function changeVideo() {
+    function showVideo(id) {
       const video = document.getElementById("ytVideo");
-
-      // 例として別の動画IDに切り替える
-      const newId = "dQw4w9WgXcQ"; // 任意の別動画ID
-      video.src = "https://www.youtube.com/embed/" + newId;
+      video.src = "https://www.youtube.com/embed/" + id;
     }
   </script>
 
