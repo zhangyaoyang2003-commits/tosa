@@ -1,21 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- ← スマホ対応：＋1行 -->
-  <title>高知紹介</title>
-  <style>body{background:#f0f8ff;font-family:"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高知紹介アプリ</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background: #fdfdfd;
+      text-align: center;
+    }
+    header {
+      background: #007acc;
+      color: white;
+      padding: 16px;
+      font-size: 24px;
+    }
+    .content {
+      padding: 16px;
+    }
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 12px;
+    }
+    button {
+      font-size: 18px;
+      padding: 12px 24px;
+      margin-top: 16px;
+      background: #0099ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+
 </head>
 <body>
 
-<h1>高知県</h1>
+  <header>高知の紹介</header>
 
-<img src="kochi.jpg" width="300">
+  <div class="content">
+    <p>高知県の自然や文化を動画で紹介 🎥</p>
 
-<p>
-高知県は四国の南にあります。<br>
-自然が豊かで、カツオのたたきが有名です。
-</p>
+    <!-- YouTube埋め込み -->
+    <div id="videoContainer">
+      <iframe 
+        id="ytVideo" 
+        src="https://www.youtube.com/embed/QSDclh3LRUw" 
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <button onclick="changeVideo()">別の動画を見る</button>
+  </div>
+
+  <script>
+    function changeVideo() {
+      const video = document.getElementById("ytVideo");
+
+      // 例として別の動画IDに切り替える
+      const newId = "dQw4w9WgXcQ"; // 任意の別動画ID
+      video.src = "https://www.youtube.com/embed/" + newId;
+    }
+  </script>
 
 </body>
 </html>
